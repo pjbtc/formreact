@@ -2,9 +2,9 @@ import React,{Component} from 'react';
 import axios from 'axios';
 
 class Formexample extends Component{
-	state= {companyName:""} // state is object which stores property values of component
+	state= {companyName:""}    // state is object which stores property values of component
 	handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault();       // event.preventDefault is used to prevent the reload or refresh of the browser
     const resp = await axios.get(`https://api.github.com/users/${this.state.companyName}`);
     this.props.onSubmit(resp.data);
     this.setState({ companyName: '' });
