@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import axios from 'axios';
 
 class Formexample extends Component{
-	state= {companyName:""}
+	state= {companyName:""} // state is object which stores property values of component
 	handleSubmit = async (event) => {
     event.preventDefault();
     const resp = await axios.get(`https://api.github.com/users/${this.state.companyName}`);
